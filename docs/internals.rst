@@ -44,6 +44,11 @@ method that returns HTML content and some metadata.
 
 Take a look at the Markdown reader::
 
+    try:
+        from markdown import Markdown
+    except ImportError:
+        Markdown = False  # NOQA
+
     class MarkdownReader(BaseReader):
         enabled = bool(Markdown)
 
